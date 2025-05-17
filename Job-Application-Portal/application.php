@@ -101,20 +101,25 @@ $email = isset($_SESSION['email']) ? $_SESSION['email'] : '';
                                     }
                                 }
                             ?>
-                            <div class="row register-form">
+                                                        <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="contact-name" placeholder="Enter your name" name="name" value="<?php echo $_SESSION['username']; ?>" required onkeyup="validateName()">
+                                    <input type="text" class="form-control" id="contact-name" placeholder="Enter your name" name="name" value="<?php echo isset($_SESSION['username']) ? $_SESSION['username'] : ''; ?>" required onkeyup="validateName()">
                                         <span id="name-error"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="tel" class="form-control" id="contact-phone" placeholder="Enter phone number" name="phone" value="<?php echo $_SESSION['uphone']; ?>" required onkeyup="validatePhone()">
+                                    <input type="tel" class="form-control" id="contact-phone" placeholder="Enter phone number" name="phone" value="<?php echo isset($_SESSION['uphone']) ? $_SESSION['uphone'] : ''; ?>" required onkeyup="validatePhone()">
                                         <span id="phone-error"></span>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="contact-email" placeholder="Enter your email" name="email" value="<?php echo $_SESSION['email']; ?>" required onkeyup="validateEmail()">
+                                    <input type="email" class="form-control" id="contact-email" placeholder="Enter your email" name="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" required onkeyup="validateEmail()">
                                         <span id="email-error"></span>
                                     </div>                                   
+                                    <div class="form-group">
+                                        <input type="file" name="pdf_file" class="form-control" accept=".pdf" title=" Upload CV" required/>
+                                        <input type="hidden" name="MAX_FILE_SIZE" value="Upload"/>
+                                    </div>
+                                </div>                   
                                     <div class="form-group">
                                         <input type="file" name="pdf_file" class="form-control" accept=".pdf" title=" Upload CV" required/>
                                         <input type="hidden" name="MAX_FILE_SIZE" value="Upload"/>
